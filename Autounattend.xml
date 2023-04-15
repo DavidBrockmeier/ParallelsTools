@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+
+
+<settings pass="windowsPE">
+
+<component name="Microsoft-Windows-Setup" processorArchitecture="amd64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<DiskConfiguration>
+<Disk wcm:action="add">
+<DiskID>0</DiskID>
+<WillWipeDisk>true</WillWipeDisk>
+<!--BIOS
+<CreatePartitions>
+<CreatePartition>
+<Order>1</Order>
+<Type>Primary</Type>
+<Size>350</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>2</Order>
+<Type>Primary</Type>
+<Extend>true</Extend>
+</CreatePartition>
+</CreatePartitions>
+<ModifyPartitions>
+<ModifyPartition>
+<Order>1</Order>
+<PartitionID>1</PartitionID>
+<Active>true</Active>
+<Format>NTFS</Format>
+<Label>System Reserved</Label>
+</ModifyPartition>
+<ModifyPartition>
+<Order>2</Order>
+<PartitionID>2</PartitionID>
+<Format>NTFS</Format>
+<Label></Label>
+<Letter>C</Letter>
+</ModifyPartition>
+</ModifyPartitions>
+BIOS-->
+<!--EFI
+<CreatePartitions>
+<CreatePartition>
+<Order>1</Order>
+<Type>Primary</Type>
+<Size>300</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>2</Order>
+<Type>EFI</Type>
+<Size>300</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>3</Order>
+<Type>MSR</Type>
+<Size>128</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>4</Order>
+<Type>Primary</Type>
+<Extend>true</Extend>
+</CreatePartition>
+</CreatePartitions>
+<ModifyPartitions>
+<ModifyPartition>
+<Order>1</Order>
+<PartitionID>1</PartitionID>
+<Format>NTFS</Format>
+<Label></Label>
+<TypeID>de94bba4-06d1-4d40-a16a-bfd50179d6ac</TypeID>
+</ModifyPartition>
+<ModifyPartition>
+<Order>2</Order>
+<PartitionID>2</PartitionID>
+<Format>FAT32</Format>
+<Label></Label>
+</ModifyPartition>
+<ModifyPartition>
+<Order>3</Order>
+<PartitionID>4</PartitionID>
+<Label></Label>
+<Letter>C</Letter>
+<Format>NTFS</Format>
+</ModifyPartition>
+</ModifyPartitions>
+EFI-->
+</Disk>
+<WillShowUI>OnError</WillShowUI>
+</DiskConfiguration>
+<UserData>
+<ProductKey>
+<Key></Key>                                                                                                                    
+<WillShowUI>OnError</WillShowUI>
+</ProductKey>
+<AcceptEula>true</AcceptEula>
+<FullName></FullName>                                                                                                                                                                                                        
+<Organization></Organization>                                                                                                                                                                                                        
+</UserData>
+<ImageInstall>
+<OSImage>
+<InstallFrom>
+<MetaData wcm:action="add">
+<Key>/IMAGE/WINDOWS/ARCH</Key>
+<Value>9</Value>                                                                
+</MetaData>
+</InstallFrom>
+<InstallTo>
+<DiskID>0</DiskID>
+<!--BIOS
+<PartitionID>2</PartitionID>
+BIOS-->
+<!--EFI
+<PartitionID>4</PartitionID>
+EFI-->
+</InstallTo>
+<WillShowUI>OnError</WillShowUI>
+<InstallToAvailablePartition>false</InstallToAvailablePartition>
+</OSImage>
+</ImageInstall>
+</component>
+
+<component name="Microsoft-Windows-Setup" processorArchitecture="x86"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<DiskConfiguration>
+<Disk wcm:action="add">
+<DiskID>0</DiskID>
+<WillWipeDisk>true</WillWipeDisk>
+<!--BIOS
+<CreatePartitions>
+<CreatePartition>
+<Order>1</Order>
+<Type>Primary</Type>
+<Size>350</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>2</Order>
+<Type>Primary</Type>
+<Extend>true</Extend>
+</CreatePartition>
+</CreatePartitions>
+<ModifyPartitions>
+<ModifyPartition>
+<Order>1</Order>
+<PartitionID>1</PartitionID>
+<Active>true</Active>
+<Format>NTFS</Format>
+<Label>System Reserved</Label>
+</ModifyPartition>
+<ModifyPartition>
+<Order>2</Order>
+<PartitionID>2</PartitionID>
+<Format>NTFS</Format>
+<Label></Label>
+<Letter>C</Letter>
+</ModifyPartition>
+</ModifyPartitions>
+BIOS-->
+<!--EFI
+<CreatePartitions>
+<CreatePartition>
+<Order>1</Order>
+<Type>Primary</Type>
+<Size>300</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>2</Order>
+<Type>EFI</Type>
+<Size>300</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>3</Order>
+<Type>MSR</Type>
+<Size>128</Size>
+</CreatePartition>
+<CreatePartition>
+<Order>4</Order>
+<Type>Primary</Type>
+<Extend>true</Extend>
+</CreatePartition>
+</CreatePartitions>
+<ModifyPartitions>
+<ModifyPartition>
+<Order>1</Order>
+<PartitionID>1</PartitionID>
+<Format>NTFS</Format>
+<Label></Label>
+<TypeID>de94bba4-06d1-4d40-a16a-bfd50179d6ac</TypeID>
+</ModifyPartition>
+<ModifyPartition>
+<Order>2</Order>
+<PartitionID>2</PartitionID>
+<Format>FAT32</Format>
+<Label></Label>
+</ModifyPartition>
+<ModifyPartition>
+<Order>3</Order>
+<PartitionID>4</PartitionID>
+<Label></Label>
+<Letter>C</Letter>
+<Format>NTFS</Format>
+</ModifyPartition>
+</ModifyPartitions>
+EFI-->
+</Disk>
+<WillShowUI>OnError</WillShowUI>
+</DiskConfiguration>
+<UserData>
+<ProductKey>
+<Key></Key>                                                                                                                    
+<WillShowUI>OnError</WillShowUI>
+</ProductKey>
+<AcceptEula>true</AcceptEula>
+<FullName></FullName>                                                                                                                                                                                                        
+<Organization></Organization>                                                                                                                                                                                                        
+</UserData>
+<ImageInstall>
+<OSImage>
+<InstallFrom>
+<MetaData wcm:action="add">
+<Key>/IMAGE/WINDOWS/ARCH</Key>
+<Value>0</Value>                                                                
+</MetaData>
+</InstallFrom>
+<InstallTo>
+<DiskID>0</DiskID>
+<!--BIOS
+<PartitionID>2</PartitionID>
+BIOS-->
+<!--EFI
+<PartitionID>4</PartitionID>
+EFI-->
+</InstallTo>
+<WillShowUI>OnError</WillShowUI>
+<InstallToAvailablePartition>false</InstallToAvailablePartition>
+</OSImage>
+</ImageInstall>
+</component>
+
+<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SetupUILanguage>
+<UILanguage>en-US</UILanguage>
+</SetupUILanguage>
+<InputLocale>en-US</InputLocale>
+<SystemLocale>en-US</SystemLocale>
+<UILanguage>en-US</UILanguage>
+<UserLocale>en-US</UserLocale>
+</component>
+
+<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="x86"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SetupUILanguage>
+<UILanguage>en-US</UILanguage>
+</SetupUILanguage>
+<InputLocale>en-US</InputLocale>
+<SystemLocale>en-US</SystemLocale>
+<UILanguage>en-US</UILanguage>
+<UserLocale>en-US</UserLocale>
+</component>
+
+<!--netkvm
+<component name="Microsoft-Windows-PnpCustomizationsWinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DriverPaths>
+    <PathAndCredentials wcm:keyValue="1" wcm:action="add">
+      <Path>E:\netkvm\amd64</Path> 
+    </PathAndCredentials>
+  </DriverPaths>
+</component>
+
+<component name="Microsoft-Windows-PnpCustomizationsWinPE" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DriverPaths>
+    <PathAndCredentials wcm:keyValue="1" wcm:action="add">
+      <Path>E:\netkvm\x86</Path> 
+    </PathAndCredentials>
+  </DriverPaths>
+</component>
+netkvm-->
+
+</settings>
+
+
+<settings pass="oobeSystem">
+
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OOBE>
+<HideEULAPage>true</HideEULAPage>
+<ProtectYourPC>3</ProtectYourPC>
+<!--SKIPOOBE10x64
+<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+<HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+<HideLocalAccountScreen>true</HideLocalAccountScreen>
+SKIPOOBE10x64-->
+<!--SKIPOOBE7x64
+<SkipMachineOOBE>true</SkipMachineOOBE>
+<SkipUserOOBE>true</SkipUserOOBE>
+SKIPOOBE7x64-->
+</OOBE>
+<AutoLogon>
+<Password>
+<Value></Value>
+<PlainText>true</PlainText>
+</Password>
+<Enabled>true</Enabled>
+<Username></Username>                                                                                                                                
+</AutoLogon>
+<Display>
+<ColorDepth>32</ColorDepth>
+<HorizontalResolution>1024</HorizontalResolution>
+<VerticalResolution>768</VerticalResolution>
+</Display>
+<UserAccounts>
+<AdministratorPassword>
+<Value></Value>
+<PlainText>true</PlainText>
+</AdministratorPassword>
+<LocalAccounts>
+<LocalAccount wcm:action="add">
+<Password>
+<Value></Value>
+<PlainText>true</PlainText>
+</Password>
+<Description></Description>
+<DisplayName></DisplayName>
+<Group>Administrators</Group>
+<Name></Name>                                                                                                                                
+</LocalAccount>
+</LocalAccounts>
+</UserAccounts>
+<FirstLogonCommands>
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /q /C "WMIC USERACCOUNT WHERE Name='' SET PasswordExpires=FALSE"</CommandLine>                                                                                                                                
+<Description>Turn off password expires</Description>
+<Order>1</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>reg add HKCU\Software\Microsoft\OneDrive /v UserInitiatedUninstall /t REG_DWORD /d 1 /f</CommandLine>
+<Description>Disable OneDrive setup</Description>
+<Order>2</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>reg add "HKLM\System\CurrentControlSet\Control\Network\NewNetworkWindowOff" /f</CommandLine>
+<Description>No New Network Block</Description>
+<Order>3</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /c mklink %systemroot%\System32\OneDrive.ico %systemroot%\SysWOW64\OneDriveSetup.exe &amp;&amp; mkdir %localappdata%\Microsoft\OneDrive &amp;&amp; mklink %localappdata%\Microsoft\OneDrive\OneDrive.exe %systemroot%\SysWOW64\OneDriveSetup.exe</CommandLine>
+<Description>Fix OneDrive icon</Description>
+<Order>4</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v StartShownOnUpgrade /t REG_DWORD /d 1 /f</CommandLine>
+<Description>Do not show Start</Description>
+<Order>5</Order>
+</SynchronousCommand>
+<!--TOOLSOOBEx64
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\prl_tg\DrvIn64.exe %I:\prl_tg\DrvIn64.exe -preloadCert %I:\prl_tg\root.cer -preloadCert %I:\prl_tg\root_ts.cer -installPrlTg %I:\prl_tg\win\prl_tg.inf"</CommandLine>
+<Description>Install Parallels Toolgate</Description>
+<Order>6</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\IGT.exe %I:\IGT.exe"</CommandLine>
+<Description>Install Parallels Tools</Description>
+<Order>7</Order>
+</SynchronousCommand>
+TOOLSOOBEx64-->
+</FirstLogonCommands>
+</component>
+
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="x86"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<OOBE>
+<HideEULAPage>true</HideEULAPage>
+<ProtectYourPC>3</ProtectYourPC>
+<!--SKIPOOBE10x86
+<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+<HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+<HideLocalAccountScreen>true</HideLocalAccountScreen>
+SKIPOOBE10x86-->
+<!--SKIPOOBE7x86
+<SkipMachineOOBE>true</SkipMachineOOBE>
+<SkipUserOOBE>true</SkipUserOOBE>
+SKIPOOBE7x86-->
+</OOBE>
+<AutoLogon>
+<Password>
+<Value></Value>
+<PlainText>true</PlainText>
+</Password>
+<Enabled>true</Enabled>
+<Username></Username>                                                                                                                                
+</AutoLogon>
+<Display>
+<ColorDepth>32</ColorDepth>
+<HorizontalResolution>1024</HorizontalResolution>
+<VerticalResolution>768</VerticalResolution>
+</Display>
+<UserAccounts>
+<AdministratorPassword>
+<Value></Value>
+<PlainText>true</PlainText>
+</AdministratorPassword>
+<LocalAccounts>
+<LocalAccount wcm:action="add">
+<Password>
+<Value></Value>
+<PlainText>true</PlainText>
+</Password>
+<Description></Description>
+<DisplayName></DisplayName>
+<Group>Administrators</Group>
+<Name></Name>                                                                                                                                
+</LocalAccount>
+</LocalAccounts>
+</UserAccounts>
+<FirstLogonCommands>
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /q /C "WMIC USERACCOUNT WHERE Name='' SET PasswordExpires=FALSE"</CommandLine>                                                                                                                                
+<Description>Turn off password expires</Description>
+<Order>1</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>reg add HKCU\Software\Microsoft\OneDrive /v UserInitiatedUninstall /t REG_DWORD /d 1 /f</CommandLine>
+<Description>Disable OneDrive setup</Description>
+<Order>2</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>reg add "HKLM\System\CurrentControlSet\Control\Network\NewNetworkWindowOff" /f</CommandLine>
+<Description>No New Network Block</Description>
+<Order>3</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /c mkdir %localappdata%\Microsoft\OneDrive &amp;&amp; mklink %localappdata%\Microsoft\OneDrive\OneDrive.exe %systemroot%\System32\OneDriveSetup.exe</CommandLine>
+<Description>Fix OneDrive icon</Description>
+<Order>4</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v StartShownOnUpgrade /t REG_DWORD /d 1 /f</CommandLine>
+<Description>Do not show Start</Description>
+<Order>5</Order>
+</SynchronousCommand>
+<!--TOOLSOOBEx86
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\prl_tg\DrvIn32.exe %I:\prl_tg\DrvIn32.exe -preloadCert %I:\prl_tg\root.cer -preloadCert %I:\prl_tg\root_ts.cer -installPrlTg %I:\prl_tg\win\prl_tg.inf"</CommandLine>
+<Description>Install Parallels Toolgate</Description>
+<Order>6</Order>
+</SynchronousCommand>
+<SynchronousCommand wcm:action="add">
+<CommandLine>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\IGT.exe %I:\IGT.exe"</CommandLine>
+<Description>Install Parallels Tools</Description>
+<Order>7</Order>
+</SynchronousCommand>
+TOOLSOOBEx86-->
+</FirstLogonCommands>
+</component>
+
+<!--LANGOOBE10x64
+<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<InputLocale>en-US</InputLocale>
+<SystemLocale>en-US</SystemLocale>
+<UILanguage>en-US</UILanguage>
+<UserLocale>en-US</UserLocale>
+</component>
+LANGOOBE10x64-->
+
+<!--LANGOOBE10x86
+<component name="Microsoft-Windows-International-Core" processorArchitecture="x86"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<InputLocale>en-US</InputLocale>
+<SystemLocale>en-US</SystemLocale>
+<UILanguage>en-US</UILanguage>
+<UserLocale>en-US</UserLocale>
+</component>
+LANGOOBE10x86-->
+
+</settings>
+
+
+<settings pass="specialize">
+<!--TOOLSSPEC
+<component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<RunSynchronous>
+<RunSynchronousCommand wcm:action="add">
+<Description>Install Parallels Toolgate</Description>
+<Order>1</Order>
+<Path>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\prl_tg\DrvIn64.exe %I:\prl_tg\DrvIn64.exe -installPrlTg %I:\prl_tg\x64\prl_tg.inf"</Path>
+<WillReboot>Never</WillReboot>
+</RunSynchronousCommand>
+<RunSynchronousCommand wcm:action="add">
+<Description>Disable CEIP</Description>
+<Order>2</Order>
+<Path>schtasks /Change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /Disable</Path>
+<WillReboot>Never</WillReboot>
+</RunSynchronousCommand>
+<RunSynchronousCommand wcm:action="add">
+<Description>Copy Parallels Tools</Description>
+<Order>3</Order>
+<Path>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\IGT.exe COPY %I:\IGT.exe %TEMP%\IGT.exe"</Path>
+<WillReboot>Never</WillReboot>
+</RunSynchronousCommand>
+<RunSynchronousCommand wcm:action="add">
+<Description>Install Parallels Tools</Description>
+<Order>4</Order>
+<Path>%TEMP%\IGT.exe</Path>
+<WillReboot>OnRequest</WillReboot>
+</RunSynchronousCommand>
+</RunSynchronous>
+</component>
+
+<component name="Microsoft-Windows-Deployment" processorArchitecture="x86" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<RunSynchronous>
+<RunSynchronousCommand wcm:action="add">
+<Description>Install Parallels Toolgate</Description>
+<Order>1</Order>
+<Path>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\prl_tg\DrvIn32.exe %I:\prl_tg\DrvIn32.exe -installPrlTg %I:\prl_tg\x32\prl_tg.inf"</Path>
+<WillReboot>Never</WillReboot>
+</RunSynchronousCommand>
+<RunSynchronousCommand wcm:action="add">
+<Description>Disable CEIP</Description>
+<Order>2</Order>
+<Path>schtasks /Change /TN "\Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /Disable</Path>
+<WillReboot>Never</WillReboot>
+</RunSynchronousCommand>
+<RunSynchronousCommand wcm:action="add">
+<Description>Copy Parallels Tools</Description>
+<Order>3</Order>
+<Path>cmd /q /C "FOR %I IN (A D E F G H I J K L N M O P Q R S T U V W X Y Z) DO IF EXIST %I:\IGT.exe COPY %I:\IGT.exe %TEMP%\IGT.exe"</Path>
+<WillReboot>Never</WillReboot>
+</RunSynchronousCommand>
+<RunSynchronousCommand wcm:action="add">
+<Description>Install Parallels Tools</Description>
+<Order>4</Order>
+<Path>%TEMP%\IGT.exe</Path>
+<WillReboot>OnRequest</WillReboot>
+</RunSynchronousCommand>
+</RunSynchronous>
+</component>
+TOOLSSPEC-->
+
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ComputerName></ComputerName>                                                            
+<TimeZone></TimeZone>                                                                                                                                                      
+</component>
+
+<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="x86"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<ComputerName></ComputerName>                                                            
+<TimeZone></TimeZone>                                                                                                                                                      
+</component>
+
+<component name="Microsoft-Windows-SQMAPI" processorArchitecture="amd64"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<CEIPEnabled>0</CEIPEnabled>
+</component>
+
+<component name="Microsoft-Windows-SQMAPI" processorArchitecture="x86"
+ publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <CEIPEnabled>0</CEIPEnabled>
+</component>
+
+</settings>
+
+
+</unattend>

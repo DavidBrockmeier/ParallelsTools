@@ -1,0 +1,107 @@
+;
+;
+; Installation file (.inf) for the Parallels Tool device.
+; Version 18.2.0.53488
+;
+; Copyright 2023 Parallels International GmbH
+;
+[Version]
+Signature = "$Windows NT$"
+Class = System
+ClassGuid = {4d36e97d-e325-11ce-bfc1-08002be10318} 
+Provider = %Parallels%
+DriverVer = 02/10/2023, 18.2.0.53488
+CatalogFile = prl_tg_x86.cat
+CatalogFile.ntamd64 = prl_tg_x64.cat
+CatalogFile.ntarm64 = prl_tg_arm64.cat
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+prl_tg.sys = 1,\i386
+;prl_tg.sys = 1,\98
+;
+;[SourceDisksFiles.x86]
+;prl_tg.sys = 1,\i386
+
+[SourceDisksFiles.amd64]
+prl_tg.sys = 1,\amd64
+
+[SourceDisksFiles.arm64]
+prl_tg.sys = 1,\arm64
+
+
+[Manufacturer]
+%Parallels% = Models, NTx86, NTamd64, NTarm64
+
+[Models]
+%prl_tg% = DDInstall, PCI\VEN_1AB8&DEV_4000&SUBSYS_04001AB8
+
+[Models.NTx86]
+%prl_tg% = DDInstall, PCI\VEN_1AB8&DEV_4000&SUBSYS_04001AB8
+
+[Models.NTamd64]
+%prl_tg% = DDInstall, PCI\VEN_1AB8&DEV_4000&SUBSYS_04001AB8
+
+[Models.NTarm64]
+%prl_tg% = DDInstall, ACPI\VEN_PRL&DEV_4000
+%prl_tg% = DDInstall, PCI\VEN_1AB8&DEV_4000&SUBSYS_04001AB8
+
+
+[DDInstall]
+CopyFiles = DDCopyFiles
+
+[DDInstall.HW]
+AddReg = DDAddMSIReg
+
+[DDInstall.Services]
+AddService = prl_tg,2,DDService
+
+
+[DDInstall.NTamd64]
+CopyFiles = DDCopyFiles
+
+[DDInstall.NTamd64.HW]
+AddReg = DDAddMSIReg
+
+[DDInstall.NTamd64.Services]
+AddService = prl_tg,2,DDService
+
+
+[DDInstall.NTarm64]
+CopyFiles = DDCopyFiles
+
+[DDInstall.NTarm64.HW]
+AddReg = DDAddMSIReg
+
+[DDInstall.NTarm64.Services]
+AddService = prl_tg,2,DDService
+
+
+[DestinationDirs]
+DDCopyFiles = 12
+
+[DDCopyFiles]
+prl_tg.sys,,,0x2006
+
+[DDService]
+DisplayName = %prl_tg%
+LoadOrderGroup = Boot Bus Extender
+ServiceType = 1
+StartType = 0
+ErrorControl = 1
+ServiceBinary = %12%\prl_tg.sys
+
+[DDAddMSIReg]
+HKR, "Interrupt Management",, %REG_KEY%
+HKR, "Interrupt Management\MessageSignaledInterruptProperties",, %REG_KEY%
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", "MSISupported", %REG_DWORD%, 1
+
+[Strings]
+REG_KEY      = 0x00000010
+REG_DWORD    = 0x00010001
+
+Parallels = "Parallels"
+Disk1 = "Parallels Tools Installation Disk"
+prl_tg = "Parallels Tool Device"
